@@ -1,0 +1,89 @@
+:root {
+      --bg-dark: #050508;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --accent: #7c4dff;
+      --accent-glow: rgba(124, 77, 255, 0.3);
+      --text-main: #e0e0e0;
+      --text-sub: #a0a0a0;
+      --gradient: linear-gradient(135deg, #7c4dff 0%, #b388ff 100%);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Outfit', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+}
+.cursor-blur {
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: -1;
+      filter: blur(80px);
+      transition: transform 0.1s ease-out;
+}
+nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+}
+.logo { font-size: 1.8rem; font-weight: 800; color: white; }
+.logo span { color: var(--accent); }
+.nav-links a {
+      color: var(--text-sub);
+      text-decoration: none;
+      margin-left: 2.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: 0.3s;
+}
+.hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 4rem;
+}
+h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 5rem;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+}
+.gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+}
+.btn-primary {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: var(--gradient);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+}
+.projects { padding: 10rem 4rem; }
+.project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+}
+.glass {
+      background: var(--card-bg);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 30px;
+      padding: 2.5rem;
+}
+footer { text-align: center; padding: 5rem 4rem; }
